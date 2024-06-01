@@ -9,7 +9,7 @@ Contains:
 
     Functions
     =========
-    hbnb - Route function for the '/0-hbnb' url
+    hbnb - Route function for the '/1-hbnb' url
 """
 from flask import Flask, render_template
 from models import storage
@@ -28,12 +28,12 @@ def renew_session(exc):
     storage.close()
 
 
-@app.route('/0-hbnb')
+@app.route('/1-hbnb')
 def hbnb(id="all"):
     all_amenities = storage.all(Amenity).values()
     all_states = storage.all(State).values()
     all_places = storage.all(Place).values()    
-    return (render_template("0-hbnb.html", amenities=all_amenities,
+    return (render_template("1-hbnb.html", amenities=all_amenities,
                             all_states=all_states, 
                             all_places=all_places,
                             cache_id=uuid4()))

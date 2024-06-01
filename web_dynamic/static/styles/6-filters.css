@@ -59,15 +59,13 @@
 .filter_amenities:hover .popover {
 	display: inline-block;
 	z-index: 100;
+	padding-left: 45px;
 }
 
 ul {
 	list-style-type: none;
 	padding: 0px;
 	padding-bottom: 20px;
-}
-
-li {
 }	
 
 h2 {
@@ -109,4 +107,9 @@ button {
 
 button:hover {
 	opacity: 90%;
+}
+
+/* Styles concerning amenity filter checkboxes */
+input.amenity_checkbox {
+    margin-right: 10px;
 }
