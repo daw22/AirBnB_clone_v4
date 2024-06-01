@@ -46,8 +46,8 @@ $(document).ready(() => {
             'Content-Type': 'application/json'
         },
         success: (data, textStatus) => {
-            console.log(data);
             if (textStatus === 'success') {
+                data = data.sort((place1, place2) => place1.name.localeCompare(place2.name));
                 for (place of data) {
                     places.append(`<ARTICLE>
                     <DIV class="headline">
