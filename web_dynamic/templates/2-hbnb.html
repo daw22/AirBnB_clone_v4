@@ -49,7 +49,7 @@
       </SECTION>
       <SECTION class="places">
         <H1>Places</H1>
-        {% for place in all_places %}
+        {% for place in all_places | sort(attribute="name") %}
         <ARTICLE>
             <DIV class="headline">
                 <DIV class="place_holder"></DIV>
