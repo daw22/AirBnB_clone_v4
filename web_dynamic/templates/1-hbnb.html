@@ -3,7 +3,7 @@
   <HEAD>
     <TITLE>AirBnB clone</TITLE>
 
-    <LINK rel="shortcut icon" href='{{ url_for("static", filename="images/icon.ico") }}'/>
+    <LINK rel="shortcut icon" href='{{ url_for("static", filename="images/icon.ico") }}?{{ cache_id }}'/>
 
     <LINK rel="stylesheet" href='{{ url_for("static", filename="styles/4-common.css") }}?{{ cache_id }}'/>
     <LINK rel="stylesheet" href='{{ url_for("static", filename="styles/3-header.css") }}?{{ cache_id }}'/>
@@ -12,7 +12,7 @@
     <LINK rel="stylesheet" href='{{ url_for("static", filename="styles/8-places.css") }}?{{ cache_id }}'/>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src='{{ url_for("static", filename="scripts/1-hbnb.js") }}'></script>
+    <script type="text/javascript" src='{{ url_for("static", filename="scripts/1-hbnb.js") }}?{{ cache_id }}'></script>
   </HEAD>
   <BODY>
     <HEADER>
