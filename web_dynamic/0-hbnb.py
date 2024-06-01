@@ -29,7 +29,8 @@ def renew_session(exc):
 
 
 @app.route('/0-hbnb')
-def hbnb(id="all"):
+def hbnb():
+    """Handles requests to /api/v1/0-hbnb"""
     all_amenities = storage.all(Amenity).values()
     all_states = storage.all(State).values()
     all_places = storage.all(Place).values()    
@@ -41,4 +42,3 @@ def hbnb(id="all"):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000")
-    
