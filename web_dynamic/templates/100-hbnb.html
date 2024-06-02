@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<HTML lang="en">
+  <HEAD>
+    <TITLE>AirBnB clone</TITLE>
+
+    <LINK rel="shortcut icon" href='{{ url_for("static", filename="images/icon.ico") }}?{{ cache_id }}'/>
+
+    <LINK rel="stylesheet" href='{{ url_for("static", filename="styles/4-common.css") }}?{{ cache_id }}'/>
+    <LINK rel="stylesheet" href='{{ url_for("static", filename="styles/3-header.css") }}?{{ cache_id }}'/>
+    <LINK rel="stylesheet" href='{{ url_for("static", filename="styles/3-footer.css") }}?{{ cache_id }}'/>
+    <LINK rel="stylesheet" href='{{ url_for("static", filename="styles/6-filters.css") }}?{{ cache_id }}'/>
+    <LINK rel="stylesheet" href='{{ url_for("static", filename="styles/8-places.css") }}?{{ cache_id }}'/>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src='{{ url_for("static", filename="scripts/100-hbnb.js") }}?{{ cache_id }}'></script>
+  </HEAD>
+  <BODY>
+    <HEADER>
+      <DIV id="header_logo"><IMG src={{ url_for("static", filename="images/logo.png") }}></DIV>
+      <DIV id="api_status"></DIV>
+    </HEADER>
+    <DIV class="container">
+      <SECTION class="filters">
+	<BUTTON class="filter-search">Search</BUTTON>
+	<DIV class="locations">
+	  <H3>States</H3>
+	  <H4 class="filtered_states">&nbsp</H4>
+	  <UL class="popover">
+	    {% for state in all_states | sort(attribute="name") %}
+	    <LI class="state-item"><INPUT type="checkbox"  data-id=":{{ state.id }}" data-name=":{{ state.name }}" id="{{ state.id }}" class="state_checkbox"><label class="state-label" for="{{ state.id }}">{{ state.name }}</label>
+	      <UL>
+		{% for city in state.cities | sort(attribute="name") %}
+		<LI class="city-item"><INPUT type="checkbox"  data-id=":{{ city.id }}" data-name=":{{ city.name }}" id="{{ city.id }}" class="city_checkbox"><label class="city-label" for="{{ city.id }}">{{ city.name }}</label></LI>
+		{% endfor %}
+	      </UL>
+	    </LI>
+	    {% endfor %}
+	  </UL>
+	</DIV>
+	<DIV class="filter_amenities">
+	  <H3>Amenities</H3>
+	  <H4 class="filtered_amenities">&nbsp</H4>
+	  <UL class="popover">
+	    {% for amenity in amenities | sort(attribute="name") %}
+	    <LI><INPUT type="checkbox" class="amenity_checkbox" data-id=":{{ amenity.id }}" data-name=":{{ amenity.name }}" id="{{ amenity.name }}"><LABEL for="{{ amenity.name }}">{{ amenity.name }}</LABEL></LI>
+	    {% endfor %}
+	</DIV>
+
+      </SECTION>
+      <SECTION class="places">
+        <H1>Places</H1>
+    </SECTION>
+    </DIV>
+    <FOOTER>
+      <P>Holberton School</P>
+    </FOOTER>
+  </BODY>
+</HTML>
