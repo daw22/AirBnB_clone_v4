@@ -111,3 +111,43 @@ article h2 {
     width: 100%;
     height: 100%;
 }
+
+.reviews {
+	padding-bottom: 5px;
+	width: 100%;
+}
+
+.reviews-headline {
+	display: flex;
+	width: 100%;
+	margin: 20px 0;
+	padding: 10px 0;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.reviews-headline h2 {
+	font-size: 18px;
+	display: inline;
+	margin: 0;
+}
+
+.review-toggle {
+	cursor:pointer;
+}
+
+.review-toggle:hover {
+	color: #FF5A5F;
+}
+
+.reviews li {
+	text-align: left;
+	margin: 15px 0;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.reviews h3 {
+	font-size: 16px;
+	padding: 0;
+}
